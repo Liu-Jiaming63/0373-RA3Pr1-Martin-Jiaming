@@ -1,205 +1,102 @@
-# JavaScript: formulari de notes
+# Bateria de preguntes obertes sobre Git i GitHub
 
-| Format d’entrega: Entregueu la url PÚBLICA del repositori de GITHUB. El repositori ha de anomenar-se: 0373-Ra3Pr1-CognomsNom |
-| :---- |
+## 1. Reconeix la utilitat de les aplicacions d’ofimàtica web
 
-###### 
+### Explica per què GitHub es pot considerar una aplicació web de treball col·laboratiu
+GitHub es considera una aplicació web col·laborativa perquè permet que diverses persones treballin en un mateix projecte des de diferents llocs, compartint codi i canvis en temps real, com ara el treball grupal que estem realitzant mitjançant, pushes, etc...
 
-###### Objectiu:
+### Quins avantatges té utilitzar GitHub en lloc de guardar els fitxers d’un projecte només en un ordinador local
+Permet accedir al projecte des de qualsevol lloc, treballar amb altres persones i recuperar versions anteriors del projecte amb els commits.
 
-En aquesta pràctica hauràs de crear una petita aplicació web que permeti introduir les notes d’alumnes, calcular la seva nota final i mostrar una taula amb els resultats.
+### Com pot ajudar GitHub a gestionar versions d’un projecte web o d’una aplicació
+GitHub guarda l’historial de canvis amb commits, amb un texte identificatiu que tu mateix li assignas al fer un commit, permet tornar a versions anteriors i veure qui ha fet cada modificació.
 
-L’objectiu és practicar conceptes bàsics de JavaScript, especialment:
+### En quins tipus de projectes és especialment útil utilitzar Git i GitHub
+És útil en projectes de programació, aplicacions web, treballs en grup i qualsevol projecte on hi hagi diversas persones, com ve a ser el nostre cas de fer un joc amb codi, amb un company.
 
-* Funcions  
-* Càlculs numèrics senzills  
-* Validació de formularis  
-* Manipulació bàsica de strings  
-* Arrays  
-* Objectes  
-* Ordenació de dades
+### Quines diferències hi ha entre un sistema de control de versions com Git i un sistema tradicional d’emmagatzematge de fitxers
+Un sistema tradicional guarda els fitxers, mentre que Git guarda un l’historial de canvis, amb textes indicatius de que es aquesta canvi o el que volguis posar com a text en aquell canvi.
 
-No està permès utilitzar AJAX ni cap llibreria externa. La pràctica es resoldrà únicament amb HTML, CSS (opcional) i JavaScript.
 
-### 
+## 2. Classifica segons la funcionalitat i prestacions específiques
 
-### **Descripció de l’aplicació**
+### Explica quina és la diferència entre Git i GitHub
+Git és un sistema de control de versions que funciona en local, mentre que GitHub és la plataforma web on es poden guardar els repositoris Git, amb el compte de gmail.
 
-La pàgina web contindrà un **formulari** on es podran introduir les dades d’un alumne:
+### Quines funcionalitats ofereix GitHub a més del control de versions del codi
+Ofereix pull requests, issues, GitHub Pages, revisió de codi, gestió d’usuaris i documentació, tambe desde la web tambe pots modificar el codi sense nececssitat dedl visual estudio code.
 
-* Nom de l’alumne  
-* Nota de l’examen  
-* Nota de les pràctiques  
-* Nota d’actitud
+### Repositoris
+Són com carpetes on es guarda el projecte amb el seu codi, historial de canvis i documentació.
 
-Quan l’usuari enviï el formulari:
+### Issues
+Serveixen per gestionar errors o tasques.
 
-1. Les dades es validaran.  
-   1. Si les dades no són correctes es mostrarà quin camp és incorrecte i que necessita per ser correcte.  
-2. Si les dades són correctes es calcularà la **nota final**.  
-3. L’alumne s’afegirà a una **llista d’alumnes**.  
-4. Es mostrarà la llista amb tots els alumnes introduïts.
+### Pull requests
+Permeten proposar canvis i revisar-los abans d’afegir-los a la branca principal.
 
-### **Càlcul de la nota final**
+### GitHub Pages
+Permet publicar pàgines web directament des d’un repositori.
 
-La nota final es calcularà amb la següent ponderació:
+### Quina funció tenen les branques (branches) en Git
+Permeten treballar en parts diferents del projecte sense afectar la versió principal, com per exemple en el nostre cas tenim feature-ui-logic i feature-game-engine.
 
-* **Examen:** 60%  
-* **Pràctiques:** 30%  
-* **Actitud:** 10%
+### Per a què serveixen les pull requests en un projecte col·laboratiu
+Serveixen per revisar el codi abans de fusionar-lo amb la branca principal.
 
-Exemple:
 
-* Examen: 7  
-* Pràctiques: 8  
-* Actitud: 10
+## 3. Gestiona els comptes d’usuari
 
-Nota final \= (7 × 0.6) \+ (8 × 0.3) \+ (10 × 0.1)
+### Què és un compte d’usuari a GitHub i per què és necessari per treballar amb repositoris remots
+És el perfil de l’usuari i permet pujar canvis, crear repositoris i treaballar amb altres persones.
 
-El resultat s’haurà de mostrar amb **dos decimals**.
+### Quina diferència hi ha entre un repositori públic i un privat a GitHub
+Un repositori públic és visible per tothom, mentre que un privat només és accessible per usuaris autoritzats per tu, es a dir els que tu volguis donar permisos.
 
-També s’haurà d’indicar si l’alumne està:
+### Com es pot afegir un col·laborador a un repositori de GitHub
+Des de la configuració del repositori, afegint el nom d’usuari del col·laborador / company amb el que vols col·laborar.
 
-* **Aprovat** (nota ≥ 5\)  
-* **Suspès** (nota \< 5\)
+### Quins rols o permisos pot tenir un usuari dins d’un repositori
+Pot tenir permisos de lectura, escriptura o admin.
 
-### 
+### Per què és important gestionar correctament els permisos dels usuaris en un projecte col·laboratiu
+Per evitar problemes en el proyecte, o que l'altre part faci coses no autorizades per tu.
 
-### **Validació del formulari**
 
-Abans de fer qualsevol càlcul, el formulari s’ha de validar.  
-Cal comprovar:
+## 4. Aplica criteris de seguretat en l’accés dels usuaris
 
-* El **nom no pot estar buit**  
-* Les notes han d’estar entre **0 i 10**  
-* Les notes han de ser **numèriques**
+### Quins riscos pot tenir compartir un repositori amb massa permisos per a tots els usuaris
+Algú podria esborrar fitxers, modificar el projecte o fer malve el codi...
 
-Si alguna dada no és correcta, s’ha de mostrar un **missatge d’error** i **no s’ha de calcular la nota**.
+### Per què és recomanable utilitzar autenticació segura (com tokens o SSH) per accedir a GitHub
+Per protegir el compte i evitar accessos no autoritzats a aquest.
 
-### **Emmagatzematge de les dades**
+### Què passaria si es publiquen contrasenyes o claus privades dins d’un repositori
+Podrien ser utilitzades per accedir a comptes.
 
-Cada alumne s’haurà de guardar dins un **array d’alumnes**.  
-Per representar cada alumne hauràs d’utilitzar **objectes de JavaScript**.
+### Quines bones pràctiques de seguretat s’han de seguir quan es treballa amb GitHub
+No compartir contrasenyes, utilitzar autenticació en dos passos i no pujar dades sensibles.
 
-### **Objectes en JavaScript**
+### Per què és important controlar qui pot fer push directament a la branca principal (main)
+Per evitar que es trenqui la versió final del projecte.
 
-Un **objecte** en JavaScript és una estructura que permet guardar diferents dades relacionades entre si utilitzant **propietats (clau: valor)**.
 
-Exemple d’objecte:
+## 5. Utilitza les aplicacions de forma cooperativa
 
-| `let alumne = {`    `nom: "Anna",`    `examen: 7,`    `practiques: 8,`    `actitud: 9,`    `notaFinal: 7.6` `};` |
-| :---- |
+### Explica com poden treballar diverses persones al mateix projecte utilitzant GitHub
+Cada persona treballa en la seva branca, fa commits i després s’uneixen els canvis amb merges o pull requests.
 
-En aquest exemple:
+### Per què és útil treballar amb branques en lloc de modificar directament la branca principal
+Perquè permet fer codi i prova, sense trencar el treball principal
 
-* `nom`, `examen`, `practiques`, `actitud` i `notaFinal` són **propietats**.  
-* Cada propietat té un **valor associat**.
 
-Els objectes permeten **organitzar la informació de manera clara**, especialment quan treballem amb **llistes de dades complexes**.
+## 6. Elabora documentació relativa a l’ús i la gestió de les aplicacions
 
-En aquesta pràctica cada alumne s’haurà de guardar com un **objecte dins d’un array**.
+### Per què és important incloure un fitxer README.md en un repositori de GitHub
+Per explicar el funcionament del projecte / codi i ajudar altres persones a entendre’l, o tranmetre el missatge que tu volguis.
 
-Exemple d’array d’alumnes:
+### Quins avantatges té utilitzar Markdown per escriure documentació a GitHub
+És fàcil d’utilitzar, i t'ayuda a saber de que va el proyecte en cas de tenir-ne molts.
 
-| `let alumnes = [`    `{nom:"Anna", notaFinal:7.6},`    `{nom:"Marc", notaFinal:5.2},`    `{nom:"Laura", notaFinal:8.9}` `];` |
-| :---- |
-
-### **Mostrar la taula d’alumnes**
-
-La pàgina haurà de mostrar una **taula amb tots els alumnes introduïts**.
-
-Per cada alumne s’ha de mostrar com a mínim:
-
-* Nom  
-* Nota final  
-* Estat (Aprovat / Suspès)
-
-Opcionalment podeu mostrar les notes de la pràctica i de l’examen.
-
-Exemple:
-
-| Alumne | Nota Calculada | Aprovat / Suspés |
-| :---- | :---- | :---- |
-| Anna Cortés | 7.60 | Aprovat |
-| Marc Alcina | 4.80 | Suspès |
-| Laura Perelló | 8.20 | Aprovat |
-
-### 
-
-### **Ordenació de la llista**
-
-L’aplicació haurà de permetre **ordenar la llista d’alumnes per nota final**.
-
-S’haurà d’implementar una funcionalitat que permeti ordenar:
-
-* **De major a menor nota**  
-* **De menor a major nota**
-
-Per fer-ho es pot utilitzar el mètode `sort()` dels arrays. Exemple:
-
-| `alumnes.sort(function(a, b){`    `return b.notaFinal - a.notaFinal;` `});` |
-| :---- |
-
-###  **Requisits tècnics**
-
-La pràctica ha de complir els següents requisits:
-
-* Utilitzar **funcions JavaScript**  
-* Utilitzar **arrays**  
-* Utilitzar **objectes**  
-* Fer **validació del formulari**  
-* Realitzar **càlculs numèrics**  
-* Mostrar resultats a la pàgina
-
-No es permet:
-
-* Utilitzar **AJAX**  
-* Utilitzar **frameworks o llibreries**  
-* Utilitzar codi generat per IA sense entendre’l
-
-### 
-
-### **Suggeriment d’organització del codi**
-
-Està permés crear les funcions que es creguin necessàries. Tot i això es recomana crear algunes funcions com:
-
-* `validarFormulari():`  
-  * `Comprovar si els camps tenen el format esperat.`  
-  * `Comprovar si els camps están plens.`  
-  * `Mostrar missatge d’error`  
-  * `Crida de la funció al fer submit al formulari:`
-
-| `formulari.addEventListener("submit", validarFormulari());` |
-| :---- |
-
-* `calcularNotaFinal()`  
-* `afegirAlumne()`  
-* `mostrarAlumnes():`  
-  * `Recomanació buidar la taula. cosTaula.innerHTML = “”;`  
-  * `Crear un bucle que afegeix una fila (<td>) amb les dades a cada columna:`
-
-| ``let fila = ` <tr>``         `<td>${alumne.nom}</td>`         `<td>${alumne.examen.toFixed(2)}</td>` `…’` `cosTaula.innerHTML += fila;` |
-| :---- |
-
-* `ordenarAlumnes()`
-
-Variables i elements HTML: Realitzar getElement i guardar cadascun dels elements necessàris a l’inici del codi JS.
-
-Per a centrar-se en el codi JS podeu partir del projecte amb una plantilla HTML i CSS ja feta. Es pot ver les variacions que necessiteu:
-
-| [https://github.com/eduard-ruesga-xtec/0373-RA3Pr1-Template](https://github.com/eduard-ruesga-xtec/0373-RA3Pr1-Template) |
-| :---- |
-
-### 
-
-### **Objectiu final**
-
-Quan l’usuari introdueixi alumnes, la pàgina haurà de permetre:
-
-1. Introduir dades  
-2. Validar el formulari  
-3. Calcular la nota final  
-4. Guardar els alumnes  
-5. Mostrar la llista  
-6. Ordenar els resultats
-
+### Com pot ajudar la documentació a altres desenvolupadors que volen utilitzar o modificar el projecte
+Els permet entendre de que va el codi / proyecte i els ayuda a, utilitzar-lo i modificar-lo.
