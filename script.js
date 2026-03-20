@@ -9,3 +9,14 @@ selects.forEach(select => {
     select.appendChild(option);
   }
 });
+
+const button = document.getElementById("checkButton");
+
+button.addEventListener("click", () => {
+
+    const intento = Array.from(selects).map(select => Number(select.value));
+    // guardem els valors  en la array, per a mes endevant fer que si els valor guardats no coincideixin es restin intents
+
+  console.log(intento);
+
+});
