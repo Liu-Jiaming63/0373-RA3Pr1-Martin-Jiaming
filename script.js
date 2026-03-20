@@ -45,11 +45,6 @@ button.addEventListener("click", () => {
   if (typeof validateAttempt === "function") {
     const pistes = validateAttempt(intento);
     logTerminal("Pistes: " + pistes.join(", "));
-  }
-
-  if (typeof validateAttempt  === "function") {
-    const pistes = validateAttempt(intento);
-    logTerminal("Pistes: " + pistes.join(", "));
 
     if (typeof isWinningAttempt === "function" && isWinningAttempt(pistes)) {
       logTerminal("Has guanyat!");
